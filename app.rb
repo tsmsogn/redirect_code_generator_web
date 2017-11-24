@@ -5,6 +5,11 @@ require "sinatra/reloader"
 get "/" do
   @permanent = true
   @escape = true
+  @input = <<CODE
+/old.html                /new.html
+/old_dir/                /new_dir/
+http://your-old-site.com http://your-new-site.com
+CODE
 
   erb :index
 end
