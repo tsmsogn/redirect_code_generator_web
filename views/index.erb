@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Redirect Code Generater</title>
+    </head>
+    <body>
+        <form action="/" method="POST">
+            <input type="checkbox" name="permanent" value="1"<% if @permanent %> checked="checked"<% end %>> Use permanent redirect
+            <input type="checkbox" name="escape" value="1"<% if @escape %> checked="checked"<% end %>> Escape any characters
+            <textarea name="input"><%= @input %></textarea>
+            <input type="submit">
+            <textarea name="ouput"><%= @output %></textarea>
+        </form>
+    </body>
+</html>
