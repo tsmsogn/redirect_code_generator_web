@@ -1,8 +1,8 @@
-require "redirect_code_generator"
-require "sinatra"
-require "sinatra/reloader"
+require 'redirect_code_generator'
+require 'sinatra'
+require 'sinatra/reloader'
 
-get "/" do
+get '/' do
   @permanent = true
   @escape = true
   @input = <<CODE
@@ -14,7 +14,7 @@ CODE
   erb :index
 end
 
-post "/" do
+post '/' do
   @permanent = params[:permanent] ? true : false
   @escape = params[:escape] ? true : false
   @input = params[:input]
