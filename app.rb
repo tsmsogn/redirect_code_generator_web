@@ -8,7 +8,10 @@ get '/' do
   @input = <<CODE
 /old.html                /new.html
 /old_dir/                /new_dir/
-http://your-old-site.com http://your-new-site.com
+/old_user_dir/(.*)       /new_user_dir/$1
+/old/?page=1&search=word /new/
+http://old.com           http://new.com
+http://old.com:8080      http://new.com
 CODE
 
   erb :index
